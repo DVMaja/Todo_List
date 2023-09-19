@@ -1,6 +1,5 @@
 import Controller from "./controller/Controller.js"
 
-$(function() {
+$(function () {
     new Controller();
-
 })
