@@ -7,8 +7,6 @@ class Megjelenit {
         this.#list = list;
         szuloElem.append(`<table class="table table-striped table-bordered">`);
         this.tablaElem = szuloElem.children("table");
-
-        //console.log(this.tablaElem);
         this.megjelenites();
     }
 
@@ -20,19 +18,8 @@ class Megjelenit {
         */
         let txt = "";
 
-
         this.#list.forEach(elem => {
             new MegjelenitSor(elem, this.tablaElem);
-
-            /**Ebből külön osztály*/
-            /* txt += "<tr>";
-            for (const key in elem) {
-                const element = elem[key];
-                //txt += `<td>${elem["tevekenyseg"]}</td>`;
-                txt += `<td>${elem[key]}</td>`;
-            }
-            txt += `<td><span class="kesz">✔️</span><span class="torol">❌</span></td>`;
-            txt += "</tr>"; */
         });
     }
 

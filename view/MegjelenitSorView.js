@@ -12,7 +12,7 @@ class MegjelenitSor {
 
         this.pipaElem = this.sorElem.children("td").children(".kesz");
         this.pipaElem.on("click", () => {
-            
+
             valtoztatando.css('background-color', 'green');
             this.pipaElem.css("display", "none");
             this.megseElem.css("display", "inline");
@@ -21,7 +21,7 @@ class MegjelenitSor {
         this.megseElem = this.sorElem.children("td").children(".megse");
         this.megseElem.css("display", "none");
         this.megseElem.on("click", () => {
-            
+
             valtoztatando.css('background-color', 'transparent');
             this.megseElem.css("display", "none");
             this.pipaElem.css("display", "inline");
