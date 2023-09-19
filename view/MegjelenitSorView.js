@@ -12,15 +12,19 @@ class MegjelenitSor {
 
         this.pipaElem = this.sorElem.children("td").children(".kesz");
         this.pipaElem.on("click", () => {
-            //console.log(this.pipaElem);            
-            //console.log(valtoztatando);
+            
             valtoztatando.css('background-color', 'green');
+            this.pipaElem.css("display", "none");
+            this.megseElem.css("display", "inline");
         })
 
         this.megseElem = this.sorElem.children("td").children(".megse");
+        this.megseElem.css("display", "none");
         this.megseElem.on("click", () => {
-            //console.log(this.megseElem);
+            
             valtoztatando.css('background-color', 'transparent');
+            this.megseElem.css("display", "none");
+            this.pipaElem.css("display", "inline");
 
         })
 

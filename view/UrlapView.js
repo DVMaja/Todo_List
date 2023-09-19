@@ -7,13 +7,18 @@ class Urlap {
         this.formElem = this.szuloElem.children("form");
         this.#adat = adat;//objektum
         //this.#urlapLetrehoz();
-
-        //this.submitGomb = this.formElem.children("div").children("#submit");
-
-        //this
+        this.submitGomb = this.formElem.children("div").children("#submit");
+        //console.log(this.submitGomb);
+        this.submitGomb.on("click", (event) => {
+            console.log("katt");
+            event.preventDefault();//leszedi a beépített eseménykezelőt
+            this.#adatgyujt();
+            this.#esemenyTrigger("ujAdatHozzaAdas");
+        })
     }
 
     #urlapLetrehoz() {
+        //otthon bef, mert ez a 
         let txt = "";
 
         for (const key in this.#adat) {
@@ -22,18 +27,20 @@ class Urlap {
             <input> type="text" class="form-control" id="${key}" name="${key}" </input>
             </div>`;
         }
-        txt += `<div>`
-        
+        txt += `<div>
+                <input type="submit" value="Submit">
+                </div>`
+
         this.formElem.html(txt);
 
     }
 
-    adatgyujt() {
-        //
+    #adatgyujt() {
+        
     }
 
-    esemenyTrigger() {
-        const esemenyem = new CustomEvent("esemeny", { detail: this.#adat });
+    #esemenyTrigger() {
+        const esemenyem = new CustomEvent("ujAdatHozzaAdas", { detail: this.#adat });
         window.dispatchEvent(esemenyem);
     }
 }
