@@ -31,7 +31,8 @@ class MegjelenitSor {
         this.torolElem = this.sorElem.children("td").children(".torol");
         this.torolElem.on("click", () => {
             //console.log(this.torolElem); slice
-            valtoztatando.empty(this); //törli az aktuálisat a this miatt
+            //valtoztatando.empty(this); //törli az aktuálisat a this miatt
+            valtoztatando.remove();
             valtoztatando.css('background-color', 'transparent');
 
             this.#esemenyTrigger("torol");
