@@ -28,12 +28,11 @@ class MegjelenitSor {
         this.torolElem.on("click", () => {
             //console.log(this.torolElem); slice
             valtoztatando.empty(this); //törli az aktuálisat a this miatt
+            valtoztatando.css('background-color', 'transparent');
 
             this.#esemenyTrigger("torol");
         })
-
     }
-
 
     #sor() {
         let txt = "";
